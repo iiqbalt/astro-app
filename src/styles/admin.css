@@ -1,0 +1,499 @@
+/* Modern AdminLTE classes */
+@reference "tailwindcss";
+
+/* Custom button styles */
+.btn {
+    @apply px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 inline-flex items-center justify-center shadow-sm hover:shadow-md active:scale-95;
+}
+
+.btn-sm {
+    @apply px-3 py-1.5 text-xs rounded-md;
+}
+
+.btn-lg {
+    @apply px-6 py-3 text-base rounded-xl;
+}
+
+.btn-default {
+    @apply bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300;
+}
+
+.btn-primary {
+    @apply bg-indigo-500 text-white hover:bg-indigo-600 focus:ring-2 focus:ring-indigo-500/20;
+}
+
+.btn-success {
+    @apply bg-emerald-500 text-white hover:bg-emerald-600 focus:ring-2 focus:ring-emerald-500/20;
+}
+
+.btn-info {
+    @apply bg-sky-500 text-white hover:bg-sky-600 focus:ring-2 focus:ring-sky-500/20;
+}
+
+.btn-warning {
+    @apply bg-amber-500 text-white hover:bg-amber-600 focus:ring-2 focus:ring-amber-500/20;
+}
+
+.btn-danger {
+    @apply bg-rose-500 text-white hover:bg-rose-600 focus:ring-2 focus:ring-rose-500/20;
+}
+
+/* Card styles */
+.card {
+    @apply bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-200;
+}
+
+.card-header {
+    @apply px-6 py-4 border-b border-gray-100 bg-white rounded-t-xl flex items-center justify-between;
+}
+
+.card-title {
+    @apply text-lg font-semibold text-gray-900;
+}
+
+.card-body {
+    @apply p-6;
+}
+
+.card-footer {
+    @apply px-6 py-4 border-t border-gray-100 bg-white rounded-b-xl;
+}
+
+/* Admin Layout */
+.main-header {
+    @apply fixed top-0 left-0 right-0 bg-white border-b border-gray-100 z-30 h-16 shadow-sm backdrop-blur-sm bg-white/80;
+}
+
+.main-sidebar {
+    @apply fixed left-0 top-0 bottom-0 w-64 bg-gray-900 text-white z-20 transition-all duration-300 ease-in-out shadow-xl;
+}
+
+.content-wrapper {
+    @apply ml-64 pt-16 min-h-screen bg-gray-50/50;
+}
+
+/* Sidebar Menu */
+.nav-sidebar {
+    @apply py-4 px-2;
+}
+
+.nav-item {
+    @apply relative mb-1;
+}
+
+.nav-link {
+    @apply flex items-center px-4 py-2.5 text-gray-400 hover:bg-gray-800/50 hover:text-white rounded-lg transition-all duration-200;
+}
+
+.nav-link.active {
+    @apply bg-indigo-500/10 text-indigo-400 font-medium;
+}
+
+/* Nested menu */
+.nav-treeview {
+    @apply pl-4 mt-1 hidden;
+}
+
+.nav-item.menu-open > .nav-treeview {
+    @apply block;
+}
+
+.nav-item.has-treeview > .nav-link:after {
+    content: '▾';
+    @apply ml-auto transition-transform duration-200;
+}
+
+.nav-item.menu-open > .nav-link:after {
+    @apply transform rotate-180;
+}
+
+/* Sidebar Toggle */
+.sidebar-toggler {
+    @apply fixed left-0 bottom-4 bg-gray-900/80 text-white p-2 rounded-r-lg backdrop-blur-sm hover:bg-gray-800 transition-all duration-200 z-30;
+}
+
+.sidebar-mini .main-sidebar {
+    @apply w-16;
+}
+
+.sidebar-mini .content-wrapper {
+    @apply ml-16;
+}
+
+.sidebar-mini .nav-sidebar .nav-link span,
+.sidebar-mini .nav-sidebar .nav-treeview {
+    @apply hidden;
+}
+
+.sidebar-mini .nav-sidebar .nav-link i {
+    @apply mx-auto text-lg;
+}
+
+/* Info Boxes */
+.info-box {
+    @apply flex bg-white rounded-xl shadow-sm overflow-hidden mb-4 hover:shadow-md transition-shadow duration-200 border border-gray-100;
+}
+
+.info-box-icon {
+    @apply flex items-center justify-center w-20 text-white text-2xl bg-gradient-to-br;
+}
+
+.info-box-content {
+    @apply p-6 flex-1;
+}
+
+.info-box-text {
+    @apply text-gray-500 text-sm font-medium;
+}
+
+.info-box-number {
+    @apply text-2xl font-bold text-gray-900 mt-1;
+}
+
+/* Tables */
+.table {
+    @apply min-w-full divide-y divide-gray-100;
+}
+
+.table th {
+    @apply px-6 py-4 bg-gray-50/50 text-left text-xs font-medium text-gray-600 uppercase tracking-wider;
+}
+
+.table td {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-600 border-b border-gray-100;
+}
+
+/* Table variants */
+.table-sm th {
+    @apply px-4 py-2;
+}
+
+.table-sm td {
+    @apply px-4 py-2;
+}
+
+.table-bordered {
+    @apply border border-gray-200;
+}
+
+.table-bordered th,
+.table-bordered td {
+    @apply border border-gray-200;
+}
+
+.table-hover tr:hover {
+    @apply bg-gray-200/70 transition-colors duration-100;
+}
+
+/* Zebra striping */
+.table-striped tr:nth-child(even) {
+    @apply bg-gray-50/30;
+}
+
+/* Status Badges */
+.badge {
+    @apply px-2.5 py-1 rounded-full text-xs font-medium inline-flex items-center;
+}
+
+.badge-success {
+    @apply bg-emerald-100 text-emerald-700;
+}
+
+.badge-warning {
+    @apply bg-amber-100 text-amber-700;
+}
+
+.badge-danger {
+    @apply bg-rose-100 text-rose-700;
+}
+
+/* Custom Gradients for Info Boxes */
+.info-box:nth-child(1) .info-box-icon {
+    @apply from-indigo-500 to-blue-600;
+}
+
+.info-box:nth-child(2) .info-box-icon {
+    @apply from-emerald-500 to-teal-600;
+}
+
+.info-box:nth-child(3) .info-box-icon {
+    @apply from-amber-500 to-orange-600;
+}
+
+.info-box:nth-child(4) .info-box-icon {
+    @apply from-rose-500 to-pink-600;
+}
+
+/* Row System */
+.row {
+    @apply flex flex-wrap -mx-3;
+}
+
+.col,
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6,
+.col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
+    @apply px-3;
+}
+
+.col-1 { @apply w-1/12; }
+.col-2 { @apply w-2/12; }
+.col-3 { @apply w-3/12; }
+.col-4 { @apply w-4/12; }
+.col-5 { @apply w-5/12; }
+.col-6 { @apply w-6/12; }
+.col-7 { @apply w-7/12; }
+.col-8 { @apply w-8/12; }
+.col-9 { @apply w-9/12; }
+.col-10 { @apply w-10/12; }
+.col-11 { @apply w-11/12; }
+.col-12 { @apply w-full; }
+
+/* Responsive columns */
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12 {
+    @apply px-3;
+}
+
+@media (min-width: 640px) {
+    .col-sm-1 { @apply w-1/12; }
+    .col-sm-2 { @apply w-2/12; }
+    .col-sm-3 { @apply w-3/12; }
+    .col-sm-4 { @apply w-4/12; }
+    .col-sm-5 { @apply w-5/12; }
+    .col-sm-6 { @apply w-6/12; }
+    .col-sm-7 { @apply w-7/12; }
+    .col-sm-8 { @apply w-8/12; }
+    .col-sm-9 { @apply w-9/12; }
+    .col-sm-10 { @apply w-10/12; }
+    .col-sm-11 { @apply w-11/12; }
+    .col-sm-12 { @apply w-full; }
+}
+
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6,
+.col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    @apply px-3;
+}
+
+@media (min-width: 768px) {
+    .col-md-1 { @apply w-1/12; }
+    .col-md-2 { @apply w-2/12; }
+    .col-md-3 { @apply w-3/12; }
+    .col-md-4 { @apply w-4/12; }
+    .col-md-5 { @apply w-5/12; }
+    .col-md-6 { @apply w-6/12; }
+    .col-md-7 { @apply w-7/12; }
+    .col-md-8 { @apply w-8/12; }
+    .col-md-9 { @apply w-9/12; }
+    .col-md-10 { @apply w-10/12; }
+    .col-md-11 { @apply w-11/12; }
+    .col-md-12 { @apply w-full; }
+}
+
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6,
+.col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    @apply px-3;
+}
+
+@media (min-width: 1024px) {
+    .col-lg-1 { @apply w-1/12; }
+    .col-lg-2 { @apply w-2/12; }
+    .col-lg-3 { @apply w-3/12; }
+    .col-lg-4 { @apply w-4/12; }
+    .col-lg-5 { @apply w-5/12; }
+    .col-lg-6 { @apply w-6/12; }
+    .col-lg-7 { @apply w-7/12; }
+    .col-lg-8 { @apply w-8/12; }
+    .col-lg-9 { @apply w-9/12; }
+    .col-lg-10 { @apply w-10/12; }
+    .col-lg-11 { @apply w-11/12; }
+    .col-lg-12 { @apply w-full; }
+}
+
+/* Form Controls */
+.form-group {
+    @apply mb-4;
+}
+
+.form-label,
+.control-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+}
+
+.form-control {
+    @apply w-full px-4 py-2.5 text-sm text-gray-900 bg-white border border-gray-200 rounded-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 placeholder:text-gray-400;
+}
+
+.form-control:disabled {
+    @apply bg-gray-50 text-gray-500 cursor-not-allowed;
+}
+
+.form-control.is-invalid {
+    @apply border-rose-500 focus:ring-rose-500/20 focus:border-rose-500;
+}
+
+.form-control.is-valid {
+    @apply border-emerald-500 focus:ring-emerald-500/20 focus:border-emerald-500;
+}
+
+/* Form Control Sizes */
+.form-control-sm {
+    @apply px-3 py-1.5 text-xs rounded-md;
+}
+
+.form-control-lg {
+    @apply px-5 py-3 text-base rounded-xl;
+}
+
+/* Textarea */
+textarea.form-control {
+    @apply resize-y min-h-24;
+}
+
+/* Select */
+select.form-control {
+    @apply appearance-none bg-no-repeat bg-right pr-10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-size: 1.25em 1.25em;
+}
+
+/* Checkbox & Radio */
+.form-check {
+    @apply flex items-center mb-3;
+}
+
+.form-check-input {
+    @apply w-4 h-4 text-indigo-500 bg-white border-gray-300 rounded focus:ring-2 focus:ring-indigo-500/20 transition-all duration-200 cursor-pointer;
+}
+
+.form-check-input[type="radio"] {
+    @apply rounded-full;
+}
+
+.form-check-label {
+    @apply ml-2 text-sm text-gray-700 cursor-pointer;
+}
+
+.form-check-input:disabled {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+.form-check-input:disabled ~ .form-check-label {
+    @apply opacity-50 cursor-not-allowed;
+}
+
+/* Switch */
+.form-switch .form-check-input {
+    @apply w-11 h-6 rounded-full bg-gray-200 border-0 appearance-none cursor-pointer transition-colors duration-200;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='white'/%3e%3c/svg%3e");
+    background-position: left center;
+    background-size: contain;
+}
+
+.form-switch .form-check-input:checked {
+    @apply bg-indigo-500;
+    background-position: right center;
+}
+
+/* Input Group */
+.input-group {
+    @apply flex w-full;
+}
+
+.input-group .form-control {
+    @apply rounded-none first:rounded-l-lg last:rounded-r-lg flex-1;
+}
+
+.input-group-text {
+    @apply px-4 py-2.5 text-sm text-gray-700 bg-gray-50 border border-gray-200 flex items-center whitespace-nowrap first:rounded-l-lg last:rounded-r-lg;
+}
+
+.input-group .btn {
+    @apply rounded-none first:rounded-l-lg last:rounded-r-lg;
+}
+
+/* Form Text (Help text) */
+.form-text {
+    @apply mt-1 text-xs text-gray-500;
+}
+
+/* Validation Feedback */
+.invalid-feedback {
+    @apply mt-1 text-xs text-rose-600 hidden;
+}
+
+.is-invalid ~ .invalid-feedback {
+    @apply block;
+}
+
+.valid-feedback {
+    @apply mt-1 text-xs text-emerald-600 hidden;
+}
+
+.is-valid ~ .valid-feedback {
+    @apply block;
+}
+
+/* File Input */
+.form-control[type="file"] {
+    @apply file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100 file:cursor-pointer cursor-pointer;
+}
+
+/* Form Row */
+.form-row {
+    @apply flex flex-wrap -mx-2;
+}
+
+.form-row > .form-group {
+    @apply px-2;
+}
+
+/* Floating Labels */
+.form-floating {
+    @apply relative;
+}
+
+.form-floating > .form-control {
+    @apply pt-7 pb-2;
+}
+
+.form-floating > label {
+    @apply absolute left-4 top-4 text-gray-400 text-sm transition-all duration-200 pointer-events-none;
+}
+
+.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:not(:placeholder-shown) ~ label {
+    @apply top-2 text-xs text-indigo-500;
+}
+
+/* Range Input */
+.form-range {
+    @apply w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer;
+}
+
+.form-range::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 bg-indigo-500 rounded-full cursor-pointer hover:bg-indigo-600 transition-colors duration-200;
+}
+
+.form-range::-moz-range-thumb {
+    @apply w-5 h-5 bg-indigo-500 rounded-full cursor-pointer hover:bg-indigo-600 transition-colors duration-200 border-0;
+}
+
+/* Small screens */
+@media (max-width: 768px) {
+    .main-sidebar {
+        @apply -translate-x-full;
+    }
+    
+    .content-wrapper {
+        @apply ml-0;
+    }
+    
+    .sidebar-open .main-sidebar {
+        @apply translate-x-0;
+    }
+    
+    .sidebar-open .content-wrapper {
+        @apply ml-0;
+    }
+}
