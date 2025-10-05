@@ -1,6 +1,7 @@
 ---
 import JadwalSholat from '../components/JadwalSholat.svelte';
 import Quotes from '../components/Quotes.svelte';
+import RandomFact from '../components/RandomFact.svelte';
 
 import "../styles/global.css";
 import "../styles/admin.css";
@@ -10,8 +11,10 @@ import "../styles/admin.css";
 ---
 <div class="p-3">
 	<JadwalSholat client:load />
-	
-	<div class="grid grid-cols-2 gap-3 mt-3">
+
+	<div class="flex flex-row mt-3">
 		<Quotes client:visible />
+		<div class="mx-2"></div>
+		<RandomFact client:visible />
 	</div>
 </div>
