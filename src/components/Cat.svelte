@@ -1,14 +1,14 @@
 <script>
     import axios from "axios";
 
-    let quote = $state({});
+    let result = $state({});
 
     function getQuote() {
         axios
-            .get("https://api.quotable.io/random")
+            .get("https://api.thecatapi.com/v1/images/search")
             .then((res) => {
                 console.log("res", res);
-                quote = res.data
+                result = res.data[0]
             })
             .catch((err) => {
                 console.log("err", err);
@@ -22,7 +22,6 @@
 
 <div class="card">
     <div class="card-body">
-        <div class="font-bold text-2xl">{quote?.content}</div>
-        <div class="font-normal text-sm text-gray-400 mt-2">{quote?.author}</div>
+        <img src="{result?.url}" class="max-h-[400px] w-[{result.width}] object-contain" alt="">
     </div>
 </div>
