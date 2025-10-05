@@ -22,9 +22,6 @@
 
 <div class="card">
     <div class="card-body">
-        <div class="text-right">
-            <i class="fas fa-spinner"></i>
-        </div>
         <div class="font-bold text-2xl">{fact?.text}</div>
         <a href="{fact?.source_url}" target="_blank" class="font-normal text-sm text-gray-400 mt-2">{fact?.source_url}</a>
     </div>
