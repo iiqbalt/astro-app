@@ -8,6 +8,16 @@ import svelte from '@astrojs/svelte';
 export default defineConfig({
   vite: {
       plugins: [tailwindcss()],
+      server: {
+        proxy: {
+            '/api/quote': {
+            target: 'https://api.quotable.io',
+            changeOrigin: true,
+            secure: false, // ⚠️ abaikan SSL error
+            rewrite: (path) => path.replace(/^\/api\/quote/, '/random'),
+            },
+        },
+    },
   },
 
   integrations: [svelte()],

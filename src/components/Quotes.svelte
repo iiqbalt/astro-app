@@ -1,23 +1,17 @@
 <script>
     import axios from "axios";
+    let quote = {};
 
-    let quote = $state({});
-
-    function getQuote() {
-        axios
-            .get("https://api.quotable.io/random")
-            .then((res) => {
-                console.log("res", res);
-                quote = res.data
-            })
-            .catch((err) => {
-                console.log("err", err);
-            });
+    async function getQuote() {
+        try {
+        const res = await axios.get("/api/quote"); // pakai proxy
+        quote = res.data;
+        } catch (err) {
+        console.error("Error fetching quote:", err);
+        }
     }
 
-    $effect(() => {
-        getQuote();
-    });
+    $: getQuote();
 </script>
 
 <div class="card">
