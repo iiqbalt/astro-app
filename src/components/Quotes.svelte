@@ -1,18 +1,17 @@
 <script>
     import axios from "axios";
-
     let quote = $state({});
 
     function getQuote() {
         axios
-            .get("https://api.quotable.io/random")
-            .then((res) => {
-                console.log("res", res);
-                quote = res.data
-            })
-            .catch((err) => {
-                console.log("err", err);
-            });
+        .get("/api/quote")
+        .then((res) => {
+            console.log("res", res.data);
+            quote = res.data;
+        })
+        .catch((err) => {
+            console.error("err", err);
+        });
     }
 
     $effect(() => {
