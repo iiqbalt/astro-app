@@ -1,6 +1,7 @@
 // @ts-check
 import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
+import https from 'https';
 
 import svelte from '@astrojs/svelte';
 
@@ -11,10 +12,11 @@ export default defineConfig({
       server: {
         proxy: {
             '/api/quote': {
-            target: 'https://api.quotable.io',
-            changeOrigin: true,
-            secure: false, // ⚠️ abaikan SSL error
-            rewrite: (path) => path.replace(/^\/api\/quote/, '/random'),
+                target: 'https://api.quotable.io',
+                changeOrigin: true,
+                secure: false,
+                agent: new https.Agent({ rejectUnauthorized: false }), // 👈 ini penting
+                rewrite: (path) => path.replace(/^\/api\/quote/, '/random'),
             },
         },
     },
