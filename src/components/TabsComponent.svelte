@@ -5,6 +5,8 @@
   import Cat from "./Cat.svelte";
   import DoaHarian from "./DoaHarian.svelte";
   import Football from "./Football.svelte";
+  import Surah from "./Surah.svelte";
+
 
   let activeTab = 'sholat';
 
@@ -33,6 +35,11 @@
       id: 'football', 
       label: 'Football', 
       icon: '⚽'
+    },
+    { 
+      id: 'al-quran', 
+      label: 'Ayat Al-quran', 
+      icon: '📖'
     }
   ];
 
@@ -86,6 +93,10 @@
       {:else if activeTab === 'football'}
         <div class="tab-content">
           <Football />
+        </div>
+      {:else if activeTab === 'al-quran'}
+        <div class="tab-content">
+          <Surah />
         </div>
       {/if}
     </div>
