@@ -1,10 +1,5 @@
 ---
-import JadwalSholat from '../components/JadwalSholat.svelte';
-import Quotes from '../components/Quotes.svelte';
-import RandomFact from '../components/RandomFact.svelte';
-import Cat from '../components/Cat.svelte';
-import DoaHarian from '../components/DoaHarian.svelte';
-import Football from '../components/Football.svelte';
+import TabsComponent from "../components/TabsComponent.svelte";
 
 import "../styles/global.css";
 import "../styles/admin.css";
@@ -12,24 +7,7 @@ import "../styles/admin.css";
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
-<div class="p-3">
-	<JadwalSholat client:load />
 
-	<div class="flex flex-row mt-3">
-		<Quotes client:visible />
-		<div class="mx-2"></div>
-		<RandomFact client:visible />
-	</div>
-
-	<div class="mt-3">
-		<Cat client:visible />
-	</div>
-
-	<div class="mt-3">
-		<DoaHarian client:visible />
-	</div>
-
-	<div class="mt-3">
-		<Football client:visible />
-	</div>
+<div class="p-0">
+	<TabsComponent client:visible />
 </div>
