@@ -51,7 +51,7 @@
     { 
       id: 'spinner', 
       label: 'Spinner', 
-      icon: '😂'
+      icon: '🎯'
     }
   ];
 
