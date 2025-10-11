@@ -1,12 +1,10 @@
 <script>
-    import { onMount } from "svelte";
-
-    let count = 0;
-    let items = [];
-    let inputs = [];
-    let spinning = false;
-    let winner = null;
-    let rotation = 0;
+    let count = $state(0);
+    let items = $state([]);
+    let inputs = $state([]);
+    let spinning = $state(false);
+    let winner = $state(null);
+    let rotation = $state(0);
 
     function setCount() {
         items = [];
@@ -24,21 +22,12 @@
         spinning = true;
         winner = null;
 
-        // pilih pemenang random
         const randomIndex = Math.floor(Math.random() * items.length);
-        const extraRotations = 5 * 360; // biar muter beberapa kali
+        const extraRotations = 5 * 360;
         const segmentAngle = 360 / items.length;
-        
-        // Hitung posisi target yang tepat agar pointer mengarah ke tengah segmen pemenang
-        // Rotasi negatif karena kita ingin segmen pemenang bergerak ke posisi pointer (atas)
         const targetAngle = -(randomIndex * segmentAngle + segmentAngle / 2);
-        
-        // Hitung berapa putaran sudah dilakukan sebelumnya
         const completedRotations = Math.floor(rotation / 360) * 360;
-        
-        // Set rotasi baru: putaran sebelumnya + putaran tambahan + posisi target
-        const newRotation = completedRotations + extraRotations + targetAngle;
-        rotation = newRotation;
+        rotation = completedRotations + extraRotations + targetAngle;
 
         setTimeout(() => {
             spinning = false;
