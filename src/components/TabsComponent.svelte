@@ -7,6 +7,7 @@
   import Football from "./Football.svelte";
   import Surah from "./Surah.svelte";
   import Meme from "./Meme.svelte";
+  import Spinner from "./Spinner.svelte";
 
 
   let activeTab = 'sholat';
@@ -46,6 +47,11 @@
       id: 'meme', 
       label: 'Meme', 
       icon: '😂'
+    },
+    { 
+      id: 'spinner', 
+      label: 'Spinner', 
+      icon: '🎯'
     }
   ];
 
@@ -107,6 +113,10 @@
       {:else if activeTab === 'meme'}
         <div class="tab-content">
           <Meme />
+        </div>
+      {:else if activeTab === 'spinner'}
+        <div class="tab-content">
+          <Spinner />
         </div>
       {/if}
     </div>
