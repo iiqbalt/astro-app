@@ -6,6 +6,7 @@
   import DoaHarian from "./DoaHarian.svelte";
   import Football from "./Football.svelte";
   import Surah from "./Surah.svelte";
+  import Meme from "./Meme.svelte";
 
 
   let activeTab = 'sholat';
@@ -40,6 +41,11 @@
       id: 'al-quran', 
       label: 'Ayat Al-quran', 
       icon: '📖'
+    },
+    { 
+      id: 'meme', 
+      label: 'Meme', 
+      icon: '😂'
     }
   ];
 
@@ -97,6 +103,10 @@
       {:else if activeTab === 'al-quran'}
         <div class="tab-content">
           <Surah />
+        </div>
+      {:else if activeTab === 'meme'}
+        <div class="tab-content">
+          <Meme />
         </div>
       {/if}
     </div>
