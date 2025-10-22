@@ -1,35 +1,26 @@
 ---
-import { Fragment } from 'astro/jsx-runtime';
+import { ViewTransitions } from "astro:transitions";
+import { Head } from "astro:head";
+---
 
-Astro.head = (
-  <>
+<!DOCTYPE html>
+<html lang="en">
+  <Head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
 
-    {/* ✅ Gunakan Fragment agar tidak dihapus oleh Astro */}
-    <Fragment set:html={`<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1453358924217587" crossorigin="anonymous"></script>`} />
-  </>
-);
----
+    <!-- ✅ tambahkan script AdSense di dalam <Head> -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1453358924217587" crossorigin="anonymous"></script>
+  </Head>
 
-<!doctype html>
-<html lang="en">
-  <head>
-    {Astro.head}
-  </head>
   <body>
+    <ViewTransitions />
     <slot />
   </body>
 </html>
 
 <style>
-  html,
-  body {
-    margin: 0;
-    width: 100%;
-    height: 100%;
-  }
+  html, body { margin: 0; width: 100%; height: 100%; }
 </style>
