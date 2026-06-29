@@ -1,25 +1,25 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import { Head } from "astro:head";
+import AdUnit from "../components/AdUnit.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-  <Head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>Astro Basics</title>
-
-    <!-- ✅ tambahkan script AdSense di dalam <Head> -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1453358924217587" crossorigin="anonymous"></script>
-
-    <Fragment set:html={await Astro.readFile('/adsense.html')} />
-  </Head>
+    <ViewTransitions />
+  </head>
 
   <body>
-    <ViewTransitions />
     <slot />
+    <AdUnit />
+    <script is:inline>
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </body>
 </html>
 

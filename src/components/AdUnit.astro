@@ -1,0 +1,40 @@
+---
+interface Props {
+  adSlot?: string;
+  adFormat?: string;
+  adLayout?: string;
+  adLayoutKey?: string;
+  style?: string;
+}
+
+const {
+  adSlot = "",
+  adFormat = "auto",
+  adLayout = "",
+  adLayoutKey = "",
+  style = "",
+} = Astro.props;
+---
+
+<div class="ad-container" style={style}>
+  <ins
+    class="adsbygoogle"
+    style="display:block"
+    data-ad-client="ca-pub-1453358924217587"
+    data-ad-slot={adSlot}
+    data-ad-format={adFormat}
+    data-full-width-responsive="true"
+    {...adLayout ? { "data-ad-layout": adLayout } : {}}
+    {...adLayoutKey ? { "data-ad-layout-key": adLayoutKey } : {}}
+  ></ins>
+</div>
+
+<style>
+  .ad-container {
+    width: 100%;
+    max-width: 728px;
+    margin: 1.5rem auto;
+    text-align: center;
+    min-height: 90px;
+  }
+</style>
